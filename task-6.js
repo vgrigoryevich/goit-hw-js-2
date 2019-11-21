@@ -1,25 +1,24 @@
-
 let input;
 
 const numbers = [];
 
 let total = 0;
 
-let num = 0;
-
-
-
 while (input !== null) {
     input = prompt('Введите ваше число');
+            
+if (input === null) {
+    break;
+} else {
     numbers.push(Number(input));
-    num += 1;
+};
 };
 
-console.log(numbers);
-
-
-for (let i in numbers) {
-    total += numbers[i];
-}
-
-console.log(`Общая сумма чисел равна ${total}`);
+if (numbers.length === 0 ) {
+    console.log('Вы оставили массив пустым');
+} else { 
+    for (let number of numbers) {
+        total += number;
+    }
+    console.log(`Общая сумма чисел равна ${total}`);
+};
